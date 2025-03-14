@@ -1,0 +1,7 @@
+# Node.js dependencies
+node_modules/
+dist/
+.env
+
+# TypeScript build artifacts
+*.tsbuildinfo
