@@ -53,7 +53,11 @@ The initiator parses the answer given by the receiver, and the peers can now est
 Once the `initiator` has finished processing the answer, the two peers can connect.
 The initiator (also known as the offerer) creates and opens the data channel;
 the receiver (also known as the answerer) waits for the data channel to be opened.
-As soon as the data channel is open, the peers can exchange data.
+As soon as the data channel is open, the peers can exchange data:
+
+    initiator.getPeerConnection().getDataChannel( "text-channel-1" ).send("Hello, World!);
+    receiver.getPeerConnection().getDataChannel( "text-channel-1" ).send("Hello, Universe!);
+
 
 To log the data we receive, we can conveniently use an event listener by listening for the `message` event
 with `addEventListener`, rather than assigning a handler to the `onmessage` property.
